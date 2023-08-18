@@ -1,0 +1,91 @@
+.navbar {
+    background: var(--yellow-theme-nav-background-color);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1,2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    &__container {
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        &__logo {
+            color: var(--yellow-theme-main-color);
+            cursor: pointer;
+        }
+
+        &__menu {
+            display: flex;
+            list-style: none;
+            text-align: center;
+
+            &__item {
+                font-size: 1.6rem;
+                margin-right: 1.5rem;
+                line-height: 40px;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    height: 1px;
+                    width: 0px;
+                    background: transparent;
+                    transition: all 0.5s ease;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                    background: var(--yellow-theme-main-color);
+                } 
+
+                &__links {
+                    text-decoration: none;
+                    color: var(--yellow-theme-main-color);
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
+}
+.nav__icon {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar__container__menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -700px;  
+        opacity: 1;
+        transition: all 0.5s ease;
+
+        &.active {
+            background: var(--yellow-theme-nav-background-color);
+            left: 0;
+            opacity: 1;
+        }
+
+        &__item {
+            border-bottom: 1px solid #282828;
+            margin: 0px;
+            padding: 20px 0px;
+        }
+    }
+    .nav__icon {
+        display: block;
+        cursor: pointer;
+        color: var(--yellow-theme-main-color);
+        padding-right: 20px;
+    }
+}

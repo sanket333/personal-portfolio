@@ -1,0 +1,68 @@
+.home {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &__text-wrapper h1 {
+        color: var(--yellow-theme-main-color);
+        margin: 0;
+        font-size: 8rem;
+        line-height: 10rem;
+        font-weight: 500;
+        white-space: nowrap;
+        position: relative;
+        overflow: hidden;
+        animation: typingEffectAnimation 2.5s steps(30, end)
+    }
+
+    &__contact-me button{
+        cursor: pointer;
+        padding: 20px 70px;
+        font-size: 2rem;
+        font-weight: 500;
+        background: transparent;
+        border: 1px solid var(--yellow-theme-main-color);
+        border-radius: 4px;
+        color: var(--yellow-theme-main-color);
+        margin-top: 10px;
+
+        &:hover {
+            background: var(--yellow-theme-main-color);
+            color: #000000;
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .home__text-wrapper h1 {
+        font-size: 3rem;
+        line-height: 5rem;
+    }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 768px) {
+    .home__text-wrapper h1 {
+        font-size: 4rem;
+        line-height: 6rem;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 979px) {
+    .home__text-wrapper h1 {
+        font-size: 6rem;
+        line-height: 8rem;
+    }
+}
+
+@keyframes typingEffectAnimation {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
